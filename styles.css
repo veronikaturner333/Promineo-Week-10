@@ -1,0 +1,16 @@
+.container-fluid{
+    margin:0;
+    padding:0;
+    border:0;
+    }
+    .navbar-brand {
+    margin-left: 100px;
+    margin-right: 100px;
+    }
+
+.bg-image {
+    background-image: url('Pics/soupergoodsitebanner.jpg'); height: 400px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}

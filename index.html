@@ -1,0 +1,103 @@
+<!--Week 10 HW: This is a basic one page site created using bootstrap-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Project</title>
+    <!--Here we link to Bootstrap and external styles-->
+    <link rel="stylesheet" href= "node_modules/Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    </head>
+
+  <!-- Full width container -->
+  <body class="container-fluid">
+
+    <!--Navbar currently doesn't need to be very responsive since I just have the title of the site,
+    but this is a good starting point for a navbar with button toggling capability-->
+    <nav class="navbar navbar-expand-sm navbar-success bg-success">
+        <a class="navbar-brand text-white" href="index.html">SOUPer Good</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+    </nav>
+
+    <!-- Site Banner with text over background image -->
+    <div class="bg-image p-5 text-center shadow-1-strong mb-5 text-white">
+    <h1 class="mt-5 mb-4 h2">SOUPer Good Cooking</h1>
+    <h5 class="mb-5">
+    A little record of my favorite homecooked meals.
+    </h5>
+    </div>
+
+
+    <!----- Recipe Cards Section ----->
+
+    <div class="container text-center mb-5 fs-2">   
+        <div class="row">
+            <!----- Becomes responsive at medium viewport width ----->
+            <div class="col-md p-3">
+                <div id="card-1" class="card bg-success-subtle">
+                    <img src="Pics/Udon-Soup.png" class="card-img-top" alt="Udon Soup."  width="100">
+                    <div class="card-body">
+                        <h5 class="card-title">Udon Soup</h5>
+                        <a href="#" class="btn btn-lg btn-outline-success">Recipe</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md p-3">
+                <div id="card-2" class="card bg-success-subtle">
+                    <img src="Pics/Coconut-Apple-Curry.png" class="card-img-top" alt="Coconut Apple Curry." width="100">
+                    <div class="card-body">
+                        <h5 class="card-title">Coconut Apple Curry</h5>
+                        <a href="#" class="btn btn-lg btn-outline-success">Recipe</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md p-3">
+                <div id="card-3" class="card bg-success-subtle">
+                    <img src="Pics/Cheesy-Rice-Cake-Ramen.png" class="card-img-top" alt="Cheesy Rice Cake Ramen." width="100">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheesy Rice Cake Ramen</h5>
+                        <a href="#" class="btn btn-lg btn-outline-success">Recipe</a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+    <!----- Table with Form that keeps track of what recipes I want to try ----->
+
+    <div class="container mt-4 mb-5">
+        <h3>Recipes to Try</h3>
+        <form class="d-flex gap-2">
+            <!----- Give input fields id attributes so Javascript code can find these elements  ----->
+            <input title="Recipe Title" id="recipe-title-input" type="text" class="form-control form-control-sm"/>
+            <input title="Recipe URL Input" id="recipe-url-input" type="text" class="form-control form-control-sm"/>
+            <!--Mouse event: We are calling a JS function once the button is clicked
+            that will add input from both fields to the table-->
+            <button onclick="addRecipe(event)" class="btn btn-sm btn-outline-success">Add</button>
+            
+        </form>
+        <table class="table">
+            <thead>
+                <!----- Place both the title of the recipe and a url to it in the table ----->
+                <tr><th>Title</th><th>URL</th></tr>
+            </thead>
+            <tbody id = "recipe-table-body">
+                <!----- Example Recipe and URL ----->
+                <tr><td>Persian Lentil Soup</td><td>https://shorturl.at/pyCNS</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <!----- Linking external Javascript file ----->
+    <script src="cooking.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+  </body>
+</html>
